@@ -2,8 +2,8 @@ const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
 const cellsHorizontal = 20;
 const cellsVertical = 15;
-const width = window.innerWidth;
-const height = window.innerHeight;
+const width = window.innerWidth - 10;
+const height = window.innerHeight - 10;
 
 const unitLengthX = width / cellsHorizontal;
 const unitLengthY = height / cellsVertical;
@@ -25,10 +25,30 @@ Runner.run(Runner.create(), engine);
 
 // === Outside Walls ===
 const walls = [
-	Bodies.rectangle(width / 2, 0, width, 2, { isStatic: true }),
-	Bodies.rectangle(width / 2, height, width, 2, { isStatic: true }),
-	Bodies.rectangle(0, height / 2, 2, height, { isStatic: true }),
-	Bodies.rectangle(width, height / 2, 2, height, { isStatic: true })
+	Bodies.rectangle(width / 2, 0, width, 10, {
+		isStatic: true,
+		render: {
+			fillStyle: 'rgb(130, 28, 148)'
+		}
+	}),
+	Bodies.rectangle(width / 2, height, width, 10, {
+		isStatic: true,
+		render: {
+			fillStyle: 'rgb(130, 28, 148)'
+		}
+	}),
+	Bodies.rectangle(0, height / 2, 10, height, {
+		isStatic: true,
+		render: {
+			fillStyle: 'rgb(130, 28, 148)'
+		}
+	}),
+	Bodies.rectangle(width, height / 2, 10, height, {
+		isStatic: true,
+		render: {
+			fillStyle: 'rgb(130, 28, 148)'
+		}
+	})
 ];
 World.add(world, walls);
 
@@ -211,6 +231,7 @@ document.addEventListener('keydown', (event) => {
 		// move ball left
 		Body.setVelocity(ball, { x: x - 5, y: y });
 	}
+	return false;
 });
 
 // ==== Win Condition ====

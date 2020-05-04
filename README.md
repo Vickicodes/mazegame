@@ -12,3 +12,6 @@ https://vickicodes.github.io/mazegame/
 # Technologies
 - JavaScript
 - Matter.js
+
+# Known Issues
+With enough speed build up the ball is able to move through the walls, this is due to the force applied through matter.js

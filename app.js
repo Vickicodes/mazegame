@@ -27,36 +27,22 @@ Runner.run(Runner.create(), engine);
 const walls = [
 	Bodies.rectangle(width / 2, 0, width, 10, {
 		isStatic: true,
-		collisionFilter: {
-			group: 1
-		},
 		render: {
 			fillStyle: 'rgb(130, 28, 148)'
 		}
 	}),
 	Bodies.rectangle(width / 2, height, width, 10, {
 		isStatic: true,
-		collisionFilter: {
-			group: 1
-		},
 		render: {
 			fillStyle: 'rgb(130, 28, 148)'
 		}
 	}),
 	Bodies.rectangle(0, height / 2, 10, height, {
 		isStatic: true,
-		collisionFilter: {
-			group: 1
-		},
-		render: {
-			fillStyle: 'rgb(130, 28, 148)'
-		}
+		render: {}
 	}),
 	Bodies.rectangle(width, height / 2, 10, height, {
 		isStatic: true,
-		collisionFilter: {
-			group: 1
-		},
 		render: {
 			fillStyle: 'rgb(130, 28, 148)'
 		}
@@ -147,9 +133,6 @@ horizontals.forEach((row, rowIndex) => {
 			{
 				label: 'wall',
 				isStatic: true,
-				collisionFilter: {
-					group: 1
-				},
 				render: {
 					fillStyle: 'rgb(130, 28, 148)'
 				}
@@ -177,9 +160,6 @@ verticals.forEach((row, rowIndex) => {
 			{
 				label: 'wall',
 				isStatic: true,
-				collisionFilter: {
-					group: 1
-				},
 				render: {
 					fillStyle: 'rgb(130, 28, 148)'
 				}
